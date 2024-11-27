@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { tasks } from "./data/tasksData";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -16,6 +15,10 @@ function App() {
               <span className="fw-bold">{task.title}</span>
               {task.state === "completed" ? (
                 <span class="badge rounded-pill text-bg-success text-capitalize mx-2">
+                  {task.state}
+                </span>
+              ) : task.state === "backlog" ? (
+                <span class="badge rounded-pill text-bg-secondary text-capitalize mx-2">
                   {task.state}
                 </span>
               ) : (
